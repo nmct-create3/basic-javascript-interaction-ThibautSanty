@@ -600,6 +600,10 @@ input::placeholder {
     ---
     Everything form related here
 */
+.c-form-field{
+    position: relative;
+
+}
 
 .c-form-field--option {
     display: -webkit-flex;
@@ -674,16 +678,85 @@ more padding on the right to avoid overlap
     font-size: 14px;
     line-height: 16px;
     color: var(--color-neutral-x-dark);
+    
+}
+.c-label--floating{
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    padding: 4px 8px;
+    will-change: transform;
+    transform: translateY( 0 );
+    transition: transform 200ms ease-in-out;
+    box-shadow: 0 0 4px 4px rgba(255,255,255,0.8);
+    background: white;
+}
+.js-name-input:focus + .c-label--floating{
+    transform: translateY( -24px );
 }
 
+.is-floating{
+    transform: translateY( -24px );
+}
+
+
+.c-input-password-icon{
+    position: absolute;
+    top:36px;
+    right: 14px;
+    transition: transform: scale(0.2,0.2);
+}
+.c-input-password-icon-svg{
+    fill: var(--color-alpha);
+    width: 24px;
+    height: 24px;
+}
+.c-input-password-icon--hide{
+    display: none;
+    transition-delay: 1s;
+}
 /*
     Component: Dropdown Button
     ---
     Class to put on form buttons or
 */
-
-
-
+.c-range{
+    display: block;
+    height: 8px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: var(--color-neutral-xxxx-light);
+    border: 1px solid var(--color-neutral-xxx-light);
+}
+.c-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 8px;
+    background: var(--color-alpha );
+}
+.c-range-holder{
+    max-width: 100%;
+    display: block;
+}
+.c-range-holder::after{
+    content: attr(data-value);
+    display: inline-block;
+    width: 32px;
+    margin-top: 12px;
+    padding: 4px;
+    font-size: .8rem;
+    text-align: center;
+    border-radius: 4px;
+    background: var( --color-neutral-xxxx-light );
+    transition: transform 200ms ease-in-out;
+    transform: scale(1);
+    
+}
+.c-range:focus + .c-range-holder::after{
+    transform: scale(0);
+}
 /*
     Component: Button
     ---
@@ -724,7 +797,49 @@ more padding on the right to avoid overlap
 
 */
 
+.c-dropdown-container{
+    position: relative;
+    margin-bottom: 20px;
+    max-width: 50%;
+}
+.c-dropdown-button{
+    width: auto;
+    height: 50px;
+    background-color: var(--color-neutral-xx-light);
+    color: var(--color-neutral-xxx-dark);
+    border:none;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-top{
+    background-color: var(--color-alpha);
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+.button-bottom{
+    border-radius: 0 0 10px 10px;
+}
+.c-dropdown-button--btn{
+    -webkit-appearance:none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+.c-dropdown-button-icon{
+    display: inline-flex;
 
+}
+.c-dropdown-button-icon-svg{
+    fill:#fff;
+    width: 24px;
+    height: 24px;
+}
+.hidden{
+    display: none;
+}
 /*
     Custom option
     ---

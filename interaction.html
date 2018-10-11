@@ -33,7 +33,7 @@
                             </h5>
 							<p class="c-form-field c-form-field--floating-labels">
 								<input class="c-input js-name-input" type="email" name="username" id="username" required>
-								<label class="c-label c-label--floating js-floating-label" for="username">
+								<label class="c-label c-label--floating js-floating-label" id="js-floating-label" for="username">
 									Name
 								</label>
 							</p>
@@ -47,29 +47,55 @@
 								<span class="c-password-toggle-container">
 									<input class="c-input c-input--password-with-toggle js-password-input" type="password" name="password" id="password"
 									 required>
-									<!-- Password toggle -->
-									<!-- TODO: add password toggle -->
+
+									<span class="c-input-password-icon" id="c-input-password-show">
+                                        <svg class="c-input-password-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path d="M6.4,133.876a11,11,0,0,1,19.571-.061l.029.061a11,11,0,0,1-19.571.061l-.029-.061Zm9.8,4a4,4,0,1,0,0-8h0a4,4,0,0,0,0,8Zm0-2a2,2,0,0,1,0-4h0a2,2,0,1,1,0,4Z" transform="translate(-6.2 -123.876)"/>
+                                        </svg>                           
+                                    </span>
+
+                                    <span class="c-input-password-icon c-input-password-icon--hide" id="c-input-password-hide">
+                                        <svg class="c-input-password-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path d="M19.009,73.18l-1.77,1.78a3.908,3.908,0,0,0-1.037-.137,4,4,0,0,0-3.857,5.065l-.007-.028-2.76,2.75A11.106,11.106,0,0,1,6.4,78.82,11.014,11.014,0,0,1,19.076,73.2L19,73.18Zm3.8,1.85a11.163,11.163,0,0,1,3.2,3.79,11.014,11.014,0,0,1-12.7,5.622l.077.018,1.77-1.78a3.907,3.907,0,0,0,1.037.137,4,4,0,0,0,3.857-5.065l.007.028,2.76-2.75Zm-.25-3.99,1.42,1.42L9.839,86.6l-1.42-1.42Z" transform="translate(-6.199 -68.82)"/>
+                                        </svg>                         
+                                    </span>
 								</span>
 							</p>
                             <!-- Custom range slider -->
                             <h5>
                                 Range Slider
                             </h5>
-							<p class="c-form-field">
+							<p class="c-form-field" style="margin-bottom: 0;">
 								<label class="c-label" for="quality">
 									Quality of Create III
 								</label>
-								<input class="c-input c-range js-quality-input" type="range" min="0" max="100" value="0" name="quality" id="quality" required>
-								<span class="c-range-holder js-range-holder" data-value="0">
-								</span>
+								<input class="c-input c-range js-quality-input" type="range" value="0", min="0", max="100" name="quality" id="quality" required>
+								<div class="c-range-holder js-range-holder" id="js-range-holder" value="0" data-value="0">
+								</div>
 							</p>
 							<!-- Dropdown -->
 							<h5>
 								Dropdown
 							</h5>
-							<!-- TODO: add Markup for the buttons -->
-
-                            <!-- Like -->
+							     <div class="c-dropdown-container">
+                                     <div class="c-dropdown-button button-top" id="js-dropdown-button">
+                                         <button class="c-dropdown-button--btn">button one</button>
+                                         <span class="c-dropdown-button-icon">
+                                            <svg class="c-dropdown-button-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M7,10l5,5,5-5Z"/>
+                                            </svg>
+                                        </span>
+                                     </div>
+                                     <div class="c-dropdown-content hidden" id="js-dropdown-content">
+                                         <div class="c-dropdown-button">
+                                            <button class="c-dropdown-button--btn">button two</button>
+                                         </div>
+                                         <div class="c-dropdown-button button-bottom">
+                                             <button class="c-dropdown-button--btn">button three</button>
+                                         </div>
+                                     </div>
+                                     
+                                 </div>
                             <h5>
                                 Like this excercise!
                             </h5>
@@ -79,10 +105,13 @@
 									<!-- TODO: place SVG icon -->
 								</label>
                             </p>
+                        
 						</div>
                     </div>
                 </form>
             </div>
         </section>
+
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
